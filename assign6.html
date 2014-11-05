@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head> 
+
+<script>
+function fibonacci(){
+	var inputString = document.getElementById("txtinput").value;
+	var input = parseInt(inputString);
+    if (input == 0)
+        return 0;
+    if(input <= 2){
+        return 1;
+}else{
+var result;
+var fibprev = 1;
+var fibprevprev = 0;
+    for (var count = 1; count < input; count++) {
+        result = fibprev + fibprevprev;
+        fibprevprev = fibprev;
+        fibprev = result;
+    }
+    var output = document.getElementById('result');
+    output.innerHTML = 'The ' + inputString + 'th fibonacci number is ' + result;
+}
+    
+}
+function triangle() {
+	var inputString = document.getElementById("textinput").value;
+	var input = parseInt(inputString);
+    var result = 0
+    for (var count = 1; count <= input; count++) {
+        result = count + result
+    }
+    var output = document.getElementById('results');
+    output.innerHTML = 'The ' + inputString +'th triangle number is ' + result;
+};
+</script>
+</head>
+<body>
+	<h2>
+		Fibonacci Number Calculator<br>
+	--------------------------------------<br>
+</h2>
+	<div>
+		<label>Enter a while number greater than or equal to zero:</label>
+	</div>
+<input type = "text" id="txtinput">
+<input type = "button" value = "calculate" onclick = "fibonacci();">
+<output id="result"></output>
+
+<br>
+
+<h2>
+	Triangle Number Calculator<br>
+	------------------------------------<br>
+</h2>
+	<div>
+		<label>Enter a positive whole number:</label>
+	</div>
+<script>
+</script>
+</head>
+
+<input type = "text" id="textinput">
+<input type = "button" value = "calculate" onclick = "triangle();">
+<output id='results'></output>
+</body>
+</html>
+
